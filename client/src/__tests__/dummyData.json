@@ -1,0 +1,18 @@
+[
+  {
+    "type": "people",
+    "id": 1,
+    "attributes": {
+      "firstName": "Jane",
+      "lastName": "Doe"
+    }
+  },
+  {
+    "type": "people",
+    "id": 2,
+    "attributes": {
+      "firstName": "Ignore",
+      "lastName": "Ignore"
+    }
+  }
+]
