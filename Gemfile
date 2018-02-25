@@ -39,7 +39,7 @@ group  :test do
   # Use Rspec for testing
   gem 'rspec-rails'
   # Rapidly create records (previously called Factory Girl)
-  gem 'factory_bot'
+  gem "factory_bot_rails", "~> 4.0"
   # Testing gem for rails
   gem 'rails-controller-testing'
 end
