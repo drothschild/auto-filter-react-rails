@@ -18,8 +18,9 @@ const requestPeople = () => ({
 export const fetchPeople = () => (dispatch) => {
   dispatch(requestPeople);
   return axios
-    .get('api/v1/people')
+    .get('/api/v1/people')
     .then((res) => {
+      console.log(res);
       dispatch(receivePeople(res.data));
     })
     .catch((error) => {
