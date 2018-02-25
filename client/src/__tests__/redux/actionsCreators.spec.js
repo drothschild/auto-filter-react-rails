@@ -1,7 +1,7 @@
 import moxios from 'moxios';
 import MockAdapter from 'jest-mock-axios';
-import { changeSearchTerm, fetchPeople, receivePeople } from '../redux/actionCreators';
-import people from './dummyData.json';
+import { changeSearchTerm, fetchPeople, receivePeople } from '../../redux/actionCreators';
+import people from '../dummyData.json';
 
 
 test('changeSearchTerm', () => {
