@@ -6,7 +6,6 @@ const people = (state = { data: [], isFetching: true }, action) => {
     case REQUEST_PEOPLE:
       return { data: [], isFetching: true };
     case RECEIVE_PEOPLE: {
-      console.log('data', action.data);
       return { data: action.data, isFetching: false }; }
     default:
       return state;

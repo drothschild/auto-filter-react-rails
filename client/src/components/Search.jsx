@@ -3,17 +3,22 @@ import { connect } from 'react-redux';
 import SearchBox from './SearchBox';
 import { withRouter } from 'react-router';
 import SearchResults from './SearchResults';
-import { fetchPeople } from '../redux/actionCreators';
+import { fetchPeople, changeSearchTerm } from '../redux/actionCreators';
 
 class Search extends Component {
   componentDidMount() {
-    if (this.props.people.length === 0) {
-      this.props.getPeople();
+    const {
+ match, changeTerm, people, getPeople 
+} = this.props;
+    if (match.params.term) {
+      changeTerm(match.params.term);
+    }
+    if (people.length === 0) {
+      getPeople();
     }
   }
   render() {
     const { match } = this.props;
-    console.log(match);
     return (
       <div>
         <SearchBox searchTerm={match.params.term} />
@@ -26,6 +31,7 @@ class Search extends Component {
 Search.defaultProps = {
   people: [],
   getPeople: () => '',
+  changeTerm: () => '',
 };
 
 const mapStateToProps = state => ({
@@ -35,6 +41,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   getPeople() {
     dispatch(fetchPeople());
+  },
+  changeTerm(term) {
+    dispatch(changeSearchTerm(term));
   },
 });
 

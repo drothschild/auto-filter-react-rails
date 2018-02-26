@@ -6,7 +6,6 @@ const SearchResults = ({ searchTerm, people, isFetching }) => {
   const possibleWaitingAnnouncement = isFetching ? (
     <div className="is-fetching">Fetching Data...</div>
   ) : null;
-  console.log('people', people);
   const peopleList = people
     .filter(person =>
       `${person.attributes.firstName} ${person.attributes.lastName}`

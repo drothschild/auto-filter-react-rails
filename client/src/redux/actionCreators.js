@@ -20,7 +20,6 @@ export const fetchPeople = () => (dispatch) => {
   return axios
     .get('/api/v1/people')
     .then((res) => {
-      console.log(res);
       dispatch(receivePeople(res.data));
     })
     .catch((error) => {
