@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import store from './redux/store';
@@ -13,7 +13,9 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="router">
-            {/* <Route path="/search?:query" component={Search} /> */}
+            <Link to="Search" className="search-link">
+              Search
+            </Link>
             <Route path="/search" component={Search} />
           </div>
         </Router>

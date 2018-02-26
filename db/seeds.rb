@@ -13,3 +13,4 @@ Person.destroy_all
 20.times do |i|
     Person.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name )
 end
+p "20 fake records generated"
