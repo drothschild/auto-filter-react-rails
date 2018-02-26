@@ -1,24 +1,28 @@
 # README
+A simple app that filters a list of people. Rails 5.1 backend and React 16 client.
+## Installing Locally
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+First, you must install dependencies and setup the Postgres database:
 
-Things you may want to cover:
+```sh
+cd client && npm install && cd .. && bundle install
+bin/rake db:setup
+```
 
-* Ruby version
+## Running App
 
-* System dependencies
+To launch the app:
+```sh
+bin/rake start
+```
 
-* Configuration
+## Testing the App
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There are two sets of tests, one for the rails api, one for the React front end.
+To run the api tests:
+```sh
+bundle/exec rspec
+```
+To run the client tests:
+```sh
+cd client && npm run test

@@ -1,10 +1,10 @@
 {
     "name": "auto-filter-client",
-    "engines": {
+   "engines": {
         "node": "8.6.0"
     },
     "scripts": {
-        "start": "cd client && npm start",
+        "test": "cd client && npm run test",
         "build": "cd client && npm install && npm run build && cd ..",
         "deploy": "cp -a client/build/. public/",
         "postinstall": "npm run build && npm run deploy && echo 'Client built!'"

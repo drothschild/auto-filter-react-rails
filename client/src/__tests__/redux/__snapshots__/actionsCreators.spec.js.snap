@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`changeSearchTerm 1`] = `
+Object {
+  "searchTerm": "term",
+  "type": "CHANGE_SEARCH_TERM",
+}
+`;
+
+exports[`receivePeople 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "attributes": Object {
+        "firstName": "Jane",
+        "lastName": "Doe",
+      },
+      "id": 1,
+      "type": "people",
+    },
+    Object {
+      "attributes": Object {
+        "firstName": "Ignore",
+        "lastName": "Ignore",
+      },
+      "id": 2,
+      "type": "people",
+    },
+  ],
+  "type": "RECEIVE_PEOPLE",
+}
+`;
