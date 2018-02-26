@@ -9,12 +9,12 @@ import { fetchPeople, changeSearchTerm } from '../redux/actionCreators';
 class Search extends Component {
   componentDidMount() {
     const {
-      location, changeTerm, people, getPeople,
+      location, dispatchSearchTermChange, people, getPeople,
     } = this.props;
     if (location.search) {
       const parsed = queryString.parse(location.search);
       if (parsed.name) {
-        changeTerm(parsed.name);
+        dispatchSearchTermChange(parsed.name);
       }
     }
     if (people.length === 0) {
@@ -34,7 +34,7 @@ class Search extends Component {
 Search.defaultProps = {
   people: [],
   getPeople: () => '',
-  changeTerm: () => '',
+  dispatchSearchTermChange: () => '',
 };
 
 const mapStateToProps = state => ({
@@ -45,9 +45,10 @@ const mapDispatchToProps = dispatch => ({
   getPeople() {
     dispatch(fetchPeople());
   },
-  changeTerm(term) {
+  dispatchSearchTermChange(term) {
     dispatch(changeSearchTerm(term));
   },
 });
+export const Unwrapped = Search;
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));

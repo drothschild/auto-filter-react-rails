@@ -24,7 +24,7 @@ test('fetchPeople', (done) => {
           response: people,
         })
         .then(() => {
-          expect(request.url).toEqual('api/v1/people');
+          expect(request.url).toEqual('/api/v1/people');
           expect(dispatchMock).toBeCalledWith(receivePeople(people));
           done();
         })
