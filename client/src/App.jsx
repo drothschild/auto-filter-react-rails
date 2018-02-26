@@ -13,8 +13,8 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="router">
-            <Route path="/search/:term" component={Search} />
-            <Route path="/search/" exact component={Search} />
+            {/* <Route path="/search?:query" component={Search} /> */}
+            <Route path="/search" component={Search} />
           </div>
         </Router>
       </Provider>

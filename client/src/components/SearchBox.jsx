@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeSearchTerm } from '../redux/actionCreators';
-import { withRouter, Redirect } from 'react-router';
 
 class SearchBox extends Component {
   constructor(props) {
@@ -9,8 +8,10 @@ class SearchBox extends Component {
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
   }
   handleSearchTermChange(event) {
-    window.history.pushState('', '', `${window.location.origin}/search/${event.target.value}`);
-    this.props.dispatchSearchTermChange(event.target.value);
+    const term = event.target.value;
+    const loc = (term === '') ? '' : `?name=${encodeURIComponent(term)}`;
+    window.history.pushState('', '', `${window.location.origin}/search${loc}`);
+    this.props.dispatchSearchTermChange(term);
   }
   render() {
     const { searchTerm } = this.props;
@@ -41,4 +42,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export const Unwrapped = SearchBox;
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchBox));
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);
